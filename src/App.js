@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const name="improve my react skills"
   return (
     <div className="App">
       <header className="App-header">
@@ -17,7 +18,9 @@ function App() {
         >
           Learn React
         </a>
+      <p>{name}</p>
       </header>
+     
     </div>
   );
 }
