@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './component/Header';
 
 function App() {
   //use Arrow function
@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <Header/>
         <p>
           Hello {handleNameChange()}!
         </p>
