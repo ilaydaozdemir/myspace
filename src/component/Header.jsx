@@ -5,7 +5,7 @@ import React from "react";
 const Header = () => {
   //add style
   const headerStyle = {
-    backgroundColor: "mediumblue",
+    backgroundColor: "royalblue",
     color: "#fff",
   };
   return (
