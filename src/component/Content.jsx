@@ -15,11 +15,16 @@ const Content = () => {
   const handleClick2 = (name) => {
     console.log(`${name} was clicked`);
   };
+  //click event more example(SyntheticBaseEvent)
+  const handleClick3 = (e) => {
+    console.log(e);
+  };
   return (
     <main>
       <p>Hello {handleNameChange()}</p>
       <button onClick={handleClick}>START</button>
       <button onClick={() => handleClick2("ilayda")}>Click</button>
+      <button onClick={(e) => handleClick3(e)}>CLICK</button>
     </main>
   );
 };
