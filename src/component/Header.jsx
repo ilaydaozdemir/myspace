@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const Header = ({title}) => {
+const Header = ({ title }) => {
   //add style
   const headerStyle = {
     backgroundColor: "royalblue",
@@ -15,4 +15,7 @@ const Header = ({title}) => {
   );
 };
 
+Header.defaultProps = {
+  title: "Default Title",
+};
 export default Header;
