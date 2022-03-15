@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const Header = () => {
+const Header = (props) => {
   //add style
   const headerStyle = {
     backgroundColor: "royalblue",
@@ -10,7 +10,7 @@ const Header = () => {
   };
   return (
     <header style={headerStyle}>
-      <h1>Groceries List</h1>
+      <h1>{props.title}</h1>
     </header>
   );
 };
