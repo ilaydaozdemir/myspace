@@ -5,23 +5,7 @@ import React, { useState } from "react";
 import AddItem from './component/AddItem';
 
 function App() {
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      checked: false,
-      item: "eque porro quisquam est qui dolorem ipsum quia dolor sit amet,",
-    },
-    {
-      id: 2,
-      checked: false,
-      item: "item 2",
-    },
-    {
-      id: 3,
-      checked: false,
-      item: "item 3",
-    },
-  ]);
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist')));
   const [newItem, setNewItem] = useState('')
 
   const setAndSaveItems = (newItems) => {
@@ -50,7 +34,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!newItem) return;
-    //add ıtem
+    addItem(newItem)
     setNewItem('');
   }
   return (
