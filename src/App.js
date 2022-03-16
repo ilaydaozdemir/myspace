@@ -22,6 +22,15 @@ function App() {
       item: "item 3",
     },
   ]);
+  const [newItem, setNewItem] = useState('')
+  const addItem = (item) => {
+    const id = items.length ? items[items.length - 1].id + 1 : 1;
+    const myNewItem = { id, checked: false, item };
+    const listItems = [...items, myNewItem];
+    setItems(listItems);
+    localStorage.setItem("shoppinglist", JSON.stringify(listItems));
+
+  }
 
   const handleCheck = (id) => {
     const listItems = items.map((item) =>
@@ -35,11 +44,20 @@ function App() {
     setItems(listItems);
     localStorage.setItem("shoppinglist", JSON.stringify(listItems));
   };
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!newItem) return;
+    //add ıtem
+    setNewItem('');
+  }
   return (
     <div className="App">
       <Header title="Grocery List" />
-      <AddItem />
+      <AddItem
+        handleSubmit={handleSubmit}
+        newItem={newItem}
+        setNewItem={setNewItem}
+      />
       <Content
         items={items}
         handleCheck={handleCheck}
