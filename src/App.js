@@ -2,6 +2,7 @@ import Content from './component/Content';
 import Footer from './component/Footer';
 import Header from './component/Header';
 import React, { useState } from "react";
+import AddItem from './component/AddItem';
 
 function App() {
   const [items, setItems] = useState([
@@ -38,6 +39,7 @@ function App() {
   return (
     <div className="App">
       <Header title="Grocery List" />
+      <AddItem />
       <Content
         items={items}
         handleCheck={handleCheck}
