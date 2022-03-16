@@ -3,10 +3,12 @@ import Footer from './component/Footer';
 import Header from './component/Header';
 import React, { useState } from "react";
 import AddItem from './component/AddItem';
+import SearchItem from './component/SearchItem';
 
 function App() {
   const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist')));
   const [newItem, setNewItem] = useState('')
+  const [search, setSearch] = useState('')
 
   const setAndSaveItems = (newItems) => {
     setItems(newItems);
@@ -40,6 +42,10 @@ function App() {
   return (
     <div className="App">
       <Header title="Grocery List" />
+      <SearchItem
+        search={search}
+        setSearch={setSearch}
+      />
       <AddItem
         handleSubmit={handleSubmit}
         newItem={newItem}
